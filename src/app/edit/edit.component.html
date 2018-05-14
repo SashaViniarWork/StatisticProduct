@@ -1,3 +1,20 @@
-<p>
-  edit works!
-</p>
+<mat-toolbar color="primary" style="margin-bottom: 25px;">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon" [routerLink]="['/home']">reply</mat-icon>
+    <span class="example-spacer"></span>
+    <span style='margin-left: 25px;'>{{product?.name}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="example-container">
+
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Name" [(ngModel)]="product.name">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Price" [(ngModel)]="product.price">
+  </mat-form-field>
+  <p class="text-center">
+    <button mat-fab color="primary" (click)="updateProduct(product)">Edit</button>
+    <button mat-fab color="warn" (click)="removeProduct(product)">Delete</button>
+  </p>
+</div>

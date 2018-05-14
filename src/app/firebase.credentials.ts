@@ -5,4 +5,4 @@ export const FIREBASE_CONFIG = {
   projectId: "dream-f647b",
   storageBucket: "dream-f647b.appspot.com",
   messagingSenderId: "339255845553"
-}
+};

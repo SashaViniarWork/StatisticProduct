@@ -1,3 +1,15 @@
-<p>
-  index works!
-</p>
+<mat-toolbar color="primary" style = "margin-bottom: 25px;">
+  <mat-toolbar-row>
+    <span>Statistic</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" [routerLink]="['/add']">add</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar  color="accent" *ngFor="let product of productList | async" detail-push>
+  <mat-toolbar-row>
+    <span>{{product.name}}</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" (click) = "navEdit(product.key, product)">edit</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>

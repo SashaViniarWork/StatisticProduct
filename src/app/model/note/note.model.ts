@@ -1,5 +1,5 @@
-export interface Note {
+export interface Product {
     key?: string;
-    title: string;
-    content: string;
+    name: string;
+    price: string;
 }

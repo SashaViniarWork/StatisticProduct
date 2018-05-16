@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {ProductsService} from '../products.service';
-import {Product} from '../model/note/note.model';
+import {ProductsService} from '../../services/products.service';
+import {Product} from '../../model/note/note.model';
 import {Router} from '@angular/router';
 @Component({
   selector: 'app-edit',
@@ -12,6 +12,7 @@ export class EditComponent implements OnInit {
   product: Product = {
     name: '',
     price: '',
+    uid: localStorage.getItem('uid')
   };
   constructor(private products: ProductsService, private  router: Router) {
     this.product.name = localStorage.getItem('name');

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon" [routerLink]="['/home']">reply</mat-icon>
+    <span class="example-spacer"></span>
+    <span style='margin-left: 25px;'>Add</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="example-container">
+
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Name" [(ngModel)]="product.name">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Price" [(ngModel)]="product.price">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="AddMoney"  [(ngModel)]="addmoney">
+  </mat-form-field>
+  <p class="text-center">
+    <button mat-fab color="accent" (click)="addNote(product)">Add</button>
+  </p>
+</div>

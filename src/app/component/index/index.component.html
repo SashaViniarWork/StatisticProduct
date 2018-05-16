@@ -3,6 +3,12 @@
     <span>Statistic</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" [routerLink]="['/add']">add</mat-icon>
+    <mat-icon class="example-icon" [routerLink]="['/login']" (click) = "clear()">exit_to_app</mat-icon>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span>My money - {{total}}</span>
+    <span class="example-spacer"></span>
+    <span>Need - {{need}}</span>
   </mat-toolbar-row>
 </mat-toolbar>
 

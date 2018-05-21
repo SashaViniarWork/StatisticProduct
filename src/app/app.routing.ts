@@ -17,5 +17,5 @@ export const AppRoutes: any = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'const_value', component: AddConstUsersComponent},
-  {path: 'change_total', component: ChangeTotalComponent},
+  {path: 'change_total/:id', component: ChangeTotalComponent},
 ];

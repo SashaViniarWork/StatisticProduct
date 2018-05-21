@@ -22,7 +22,6 @@ export class EditComponent implements OnInit {
 
   }
   updateProduct(product: Product) {
-
     this.products.updateProduct(product).then(() => {
       this.router.navigate(['/home']);
     });

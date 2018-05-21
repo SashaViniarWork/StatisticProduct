@@ -1,3 +1,19 @@
-<p>
-  change-total works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon" [routerLink]="['/home']">reply</mat-icon>
+    <span class="example-spacer"></span>
+    <span style='margin-left: 25px;'>Add</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="example-container">
+
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Total" [(ngModel)]="val.total">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Need" [(ngModel)]="val.need">
+  </mat-form-field>
+  <p class="text-center">
+    <button mat-fab color="accent" (click)="updateProduct(val)">Edit</button>
+  </p>
+</div>

@@ -53,6 +53,13 @@ export class IndexComponent implements OnInit {
     this.router.navigate(['/edit', key]);
   }
 
+  navConst(key, list) {
+    localStorage.setItem('total', list.total);
+    localStorage.setItem('need', list.need);
+    localStorage.setItem('list_key', list.key);
+    this.router.navigate(['/change_total', key]);
+  }
+
   ngOnInit() {
 
   }

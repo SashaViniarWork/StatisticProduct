@@ -29,7 +29,6 @@ export class AddComponent implements OnInit {
     if (this.product.price === '' || this.product.price === null || this.product.name === '' || this.product.name === null) {
       alert('Price or Name Null');
     } else {
-      localStorage.setItem('add', this.addmoney);
       this.products.addProduct(product).then(ref => {
         this.router.navigate(['/home']);
       });

@@ -25,16 +25,22 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import {ProductsService} from "./services/products.service";
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AuthService} from "./services/auth.service";
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './component/auth/login/login.component';
+import { RegistrationComponent } from './component/auth/registration/registration.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AddConstUsersComponent } from './component/add-const-users/add-const-users.component';
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     AddComponent,
     EditComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent,
+    AddConstUsersComponent
   ],
   imports: [
+    MatGridListModule,
     BrowserModule,
     MatToolbarModule,
     MatFormFieldModule,

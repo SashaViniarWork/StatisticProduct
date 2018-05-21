@@ -1,0 +1,26 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <p class="text-center text">Login</p>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div *ngIf="!(authService.user | async)" class="log">
+      <mat-form-field class="full" attr.color="white">
+        <input matInput type="text" [(ngModel)]="email" placeholder="email">
+      </mat-form-field>
+      <mat-form-field class="full">
+        <input matInput type="password" [(ngModel)]="password" placeholder="password">
+      </mat-form-field>
+      <div class="button-row">
+        <p class="text-center">
+          <button (click)="login()" [disabled]="!email || !password" mat-raised-button color="warn">Login</button>
+        </p>
+
+      </div>
+
+    </div>
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+

@@ -13,10 +13,9 @@
       <div class="button-row">
         <p class="text-center">
           <button (click)="login()" [disabled]="!email || !password" mat-raised-button color="warn">Login</button>
+          <button [routerLink]="['/registration']"   mat-raised-button color="warn">Registration</button>
         </p>
-
       </div>
-
     </div>
 
   </mat-grid-tile>

@@ -12,7 +12,8 @@
       </mat-form-field>
       <div class="button-row">
         <p class="text-center">
-          <button (click)="signupc()" [disabled]="!email || !password" mat-raised-button color="warn">Signup</button>
+          <button (click)="signup()" [disabled]="!email || !password" mat-raised-button color="warn">Signup</button>
+          <button [routerLink]="['/login']"   mat-raised-button color="warn">Login</button>
         </p>
 
       </div>

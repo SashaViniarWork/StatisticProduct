@@ -29,6 +29,8 @@ import { LoginComponent } from './component/auth/login/login.component';
 import { RegistrationComponent } from './component/auth/registration/registration.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AddConstUsersComponent } from './component/add-const-users/add-const-users.component';
+import {ConstValService} from "./services/const-val.service";
+import { ChangeTotalComponent } from './component/change-total/change-total.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { AddConstUsersComponent } from './component/add-const-users/add-const-us
     EditComponent,
     LoginComponent,
     RegistrationComponent,
-    AddConstUsersComponent
+    AddConstUsersComponent,
+    ChangeTotalComponent
   ],
   imports: [
     MatGridListModule,
@@ -56,7 +59,7 @@ import { AddConstUsersComponent } from './component/add-const-users/add-const-us
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, ProductsService, AuthService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, ProductsService, AuthService, ConstValService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

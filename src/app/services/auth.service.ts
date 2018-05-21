@@ -20,6 +20,7 @@ export class AuthService {
       .then(value => {
         console.log('Success!', value);
         localStorage.setItem('uid', value.uid);
+        location.reload();
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
@@ -33,6 +34,7 @@ export class AuthService {
       .then(value => {
         console.log('Nice, it worked!');
         localStorage.setItem('uid', value.uid);
+        location.reload();
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
@@ -40,6 +42,7 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.clear();
     this.firebaseAuth
       .auth
       .signOut();

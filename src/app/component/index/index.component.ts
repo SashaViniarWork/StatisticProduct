@@ -65,6 +65,7 @@ export class IndexComponent implements OnInit {
   }
 
   clear() {
-    localStorage.clear();
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

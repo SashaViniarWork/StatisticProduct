@@ -3,7 +3,7 @@
     <span>Statistic</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" [routerLink]="['/add']">add</mat-icon>
-    <mat-icon class="example-icon" [routerLink]="['/login']" (click) = "clear()">exit_to_app</mat-icon>
+    <mat-icon class="example-icon" (click) = "clear()">exit_to_app</mat-icon>
   </mat-toolbar-row>
   <mat-toolbar-row *ngFor="let constvals of ValConst | async" detail-push>
     <span>Total - {{constvals.total}}</span>

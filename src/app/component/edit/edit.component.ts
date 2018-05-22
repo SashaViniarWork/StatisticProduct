@@ -12,12 +12,14 @@ export class EditComponent implements OnInit {
   product: Product = {
     name: '',
     price: '',
+    group: '',
     uid: localStorage.getItem('uid')
   };
   constructor(private products: ProductsService, private  router: Router) {
     this.product.name = localStorage.getItem('name');
     this.product.price = localStorage.getItem('price');
     this.product.key = localStorage.getItem('key');
+    this.product.group = localStorage.getItem('group');
 
 
   }
@@ -34,5 +36,6 @@ export class EditComponent implements OnInit {
   }
   ngOnInit() {
   }
+
 
 }

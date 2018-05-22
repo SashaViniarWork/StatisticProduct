@@ -13,6 +13,16 @@
   <mat-form-field style="width: 100%;">
     <input matInput placeholder="Price" [(ngModel)]="product.price">
   </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Group" [(ngModel)]="product.group">
+      <mat-option value="food">Food</mat-option>
+      <mat-option value="alcohol">Alcohol</mat-option>
+      <mat-option value="cigarettes">Cigarettes</mat-option>
+      <mat-option value="rent">Rent</mat-option>
+      <mat-option value="dress">Dress</mat-option>
+      <mat-option value="present">Present</mat-option>
+    </mat-select>
+  </mat-form-field>
   <p class="text-center">
     <button mat-fab color="primary" (click)="updateProduct(product)">Edit</button>
     <button mat-fab color="warn" (click)="removeProduct(product)">Delete</button>

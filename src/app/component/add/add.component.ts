@@ -13,6 +13,7 @@ export class AddComponent implements OnInit {
   product: Product = {
     name: '',
     price: '',
+    group: '',
     uid: localStorage.getItem('uid')
   };
   addmoney: any = '';

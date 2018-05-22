@@ -1,23 +1,39 @@
-<mat-toolbar color="warm" style = "margin-bottom: 25px;">
+<mat-toolbar color="warm" style="margin-bottom: 25px;">
   <mat-toolbar-row>
     <span>Statistic</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" [routerLink]="['/add']">add</mat-icon>
-    <mat-icon class="example-icon" (click) = "clear()">exit_to_app</mat-icon>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/add']">
+        <mat-icon class="example-icon cB">add</mat-icon>
+        <span>Add</span>
+      </button>
+      <button mat-menu-item *ngFor="let constvals of ValConst | async" (click)="navConst(constvals.key, constvals)"
+              detail-push>
+        <mat-icon class="example-icon cB">build</mat-icon>
+        <span>Change Value</span>
+      </button>
+      <button mat-menu-item (click)="clear()">
+        <mat-icon class="example-icon cB">exit_to_app</mat-icon>
+        <span>Exit</span>
+      </button>
+    </mat-menu>
   </mat-toolbar-row>
   <mat-toolbar-row *ngFor="let constvals of ValConst | async" detail-push>
-    <span>Total - {{constvals.total}}</span>
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon" (click) = "navConst(constvals.key, constvals)">build</mat-icon>
+    <span>Total - {{constvals.total}}  </span>
     <span class="example-spacer"></span>
     <span>Need - {{constvals.need}}</span>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-toolbar  color="accent" *ngFor="let product of productList | async" detail-push>
+<mat-toolbar color="accent" *ngFor="let product of productList | async" detail-push>
   <mat-toolbar-row>
     <span>{{product.name}}</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" (click) = "navEdit(product.key, product)">edit</mat-icon>
+    <mat-icon class="example-icon" (click)="navEdit(product.key, product)">edit</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>

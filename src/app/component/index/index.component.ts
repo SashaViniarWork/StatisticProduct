@@ -50,6 +50,7 @@ export class IndexComponent implements OnInit {
     localStorage.setItem('name', product.name);
     localStorage.setItem('price', product.price);
     localStorage.setItem('key', product.key);
+    localStorage.setItem('group', product.group);
     this.router.navigate(['/edit', key]);
   }
 

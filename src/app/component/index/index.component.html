@@ -16,14 +16,19 @@
         <mat-icon class="example-icon cB">build</mat-icon>
         <span>Change Value</span>
       </button>
+      <button mat-menu-item [routerLink]="['/statistic']">
+        <mat-icon class="example-icon cB">graphic_eq</mat-icon>
+        <span>Statistic</span>
+      </button>
       <button mat-menu-item (click)="clear()">
         <mat-icon class="example-icon cB">exit_to_app</mat-icon>
         <span>Exit</span>
       </button>
+
     </mat-menu>
   </mat-toolbar-row>
   <mat-toolbar-row *ngFor="let constvals of ValConst | async" detail-push>
-    <span>Total - {{constvals.total}}  </span>
+    <span>Total - {{constvals.total}}</span>
     <span class="example-spacer"></span>
     <span>Need - {{constvals.need}}</span>
 

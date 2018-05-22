@@ -1,3 +1,45 @@
-<p>
-  statistic works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon" [routerLink]="['/home']">reply</mat-icon>
+    <span class="example-spacer"></span>
+    <span style='margin-left: 25px;'>Statistic</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="example-container">
+
+
+  <!--<mat-toolbar color="accent" *ngFor="let product of productList | async" detail-push>-->
+    <!--<mat-toolbar-row>-->
+      <!--<span>{{product.group}}</span>-->
+      <!--<span class="example-spacer"></span>-->
+      <!--<mat-icon class="example-icon" (click)="navEdit(product.key, product)">edit</mat-icon>-->
+    <!--</mat-toolbar-row>-->
+  <!--</mat-toolbar>-->
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: block;">
+        <canvas baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6" style="margin-bottom: 10px">
+      <table class="table table-responsive table-condensed">
+        <tr>
+          <th *ngFor="let label of lineChartLabels">{{label}}</th>
+        </tr>
+        <tr *ngFor="let d of lineChartData">
+          <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+        </tr>
+      </table>
+      <button (click)="randomize()">CLICK</button>
+    </div>
+  </div>
+
+</div>

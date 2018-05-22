@@ -21,6 +21,7 @@ import {RegistrationComponent} from './component/auth/registration/registration.
 import {AddConstUsersComponent} from './component/add-const-users/add-const-users.component';
 import {ConstValService} from './services/const-val.service';
 import {ChangeTotalComponent} from './component/change-total/change-total.component';
+import { ChartsModule } from 'ng2-charts';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -45,6 +46,7 @@ import { StatisticComponent } from './component/statistic/statistic.component';
     StatisticComponent
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     NoopAnimationsModule,
     FormsModule,

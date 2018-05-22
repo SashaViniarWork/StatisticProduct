@@ -5,6 +5,7 @@ import { LoginComponent} from './component/auth/login/login.component';
 import {RegistrationComponent} from './component/auth/registration/registration.component';
 import {AddConstUsersComponent} from './component/add-const-users/add-const-users.component';
 import {ChangeTotalComponent} from './component/change-total/change-total.component';
+import {StatisticComponent} from "./component/statistic/statistic.component";
 export const AppRoutes: any = [
   {
     path: '',
@@ -18,4 +19,5 @@ export const AppRoutes: any = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'const_value', component: AddConstUsersComponent},
   {path: 'change_total/:id', component: ChangeTotalComponent},
+  {path: 'statistic', component: StatisticComponent},
 ];

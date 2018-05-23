@@ -15,7 +15,6 @@ export class ProductsService {
     return this.ProductListRef.push(product);
   }
   updateProduct(product: Product) {
-    console.log(product.key);
     return this.ProductListRef.update(product.key, product);
   }
 

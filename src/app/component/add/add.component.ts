@@ -3,6 +3,9 @@ import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {ProductsService} from '../../services/products.service';
 import {Product} from '../../model/note/note.model';
 import {Router} from '@angular/router';
+import {ConstModel} from '../../model/const/const.model';
+import {ConstValService} from '../../services/const-val.service';
+import {AddConstUsersComponent} from '../add-const-users/add-const-users.component';
 
 @Component({
   selector: 'app-add',
@@ -16,9 +19,13 @@ export class AddComponent implements OnInit {
     group: '',
     uid: localStorage.getItem('uid')
   };
-  addmoney: any = '';
+  val: ConstModel = {
+    total: '',
+    need: '',
+    uid: localStorage.getItem('uid')
+  };
 
-  constructor(private products: ProductsService, private  router: Router) {
+  constructor(private products: ProductsService, private  router: Router, public constUpdate: AddConstUsersComponent) {
 
   }
 
@@ -26,7 +33,6 @@ export class AddComponent implements OnInit {
   }
 
   addNote(product: Product) {
-
     if (this.product.price === '' || this.product.price === null || this.product.name === '' || this.product.name === null) {
       alert('Price or Name Null');
     } else {

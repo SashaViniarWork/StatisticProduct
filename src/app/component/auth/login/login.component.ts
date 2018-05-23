@@ -10,7 +10,11 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   email: any;
   password: any;
+
   constructor(public authService: AuthService, public router: Router) {
+    if (authService.user) {
+      this.router.navigate(['/home']);
+    }
   }
 
   signup() {

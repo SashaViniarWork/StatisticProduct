@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {ProductsService} from '../../services/products.service';
 import {Product} from '../../model/note/note.model';
+
 @Component({
   selector: 'app-statistic',
   templateUrl: './statistic.component.html',
@@ -9,26 +10,34 @@ import {Product} from '../../model/note/note.model';
 })
 export class StatisticComponent implements OnInit {
   productList: Observable<Product[]>;
+  public lineChartData: Array<any> = [
+    {data: [0], label: 'Food'},
+    {data: [0], label: 'Alcohol'},
+    {data: [0], label: 'Cigarettes'},
+    {data: [0], label: 'Rent'},
+    {data: [0], label: 'Dress'},
+    {data: [0], label: 'Present'}
+  ];
+
   constructor(private products: ProductsService) {
     this.productList = this.products.getProductList()
       .snapshotChanges()
       .map(
         changes => {
-          return changes.map(c => ({
-            key: c.payload.key, ...c.payload.val()
-          }));
+          return changes.map(c => (
+            {
+              key: c.payload.key, ...c.payload.val()
+            }
+          ));
         });
   }
-  public lineChartData:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartOptions:any = {
+
+
+  public lineChartLabels: Array<any> = ['category1', 'category12', 'category13'];
+  public lineChartOptions: any = {
     responsive: true
   };
-  public lineChartColors:Array<any> = [
+  public lineChartColors: Array<any> = [
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
       borderColor: 'rgba(148,159,177,1)',
@@ -54,29 +63,15 @@ export class StatisticComponent implements OnInit {
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     }
   ];
-  public lineChartLegend:boolean = true;
-  public lineChartType:string = 'line';
+  public lineChartLegend: boolean = true;
+  public lineChartType: string = 'line';
 
-  public randomize():void {
-    let _lineChartData:Array<any> = new Array(this.lineChartData.length);
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-      }
-    }
-    this.lineChartData = _lineChartData;
-  }
-
-  // events
-  public chartClicked(e:any):void {
-    console.log(e);
-  }
-
-  public chartHovered(e:any):void {
-    console.log(e);
-  }
   ngOnInit() {
-  }
+    // let iteration = 0;
+    // for (let item of this.productList) {
+    //   this.lineChartData[iteration].data.push(item.price);
+    //   this.lineChartData[iteration].label.push(item.group);
+    // }
 
+  }
 }

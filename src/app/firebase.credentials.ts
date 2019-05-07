@@ -1,8 +1,9 @@
 export const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyCBa7xwM_TRfoLPks5dll6dbDtYu8J9HRY",
-  authDomain: "dream-f647b.firebaseapp.com",
-  databaseURL: "https://dream-f647b.firebaseio.com",
-  projectId: "dream-f647b",
-  storageBucket: "dream-f647b.appspot.com",
-  messagingSenderId: "339255845553"
+ apiKey: "AIzaSyCiWKSeOgDpoFy9ateYEvDQYlIaKhoJpxY",
+    authDomain: "money-5a5d1.firebaseapp.com",
+    databaseURL: "https://money-5a5d1.firebaseio.com",
+    projectId: "money-5a5d1",
+    storageBucket: "money-5a5d1.appspot.com",
+    messagingSenderId: "548405072435",
+    appId: "1:548405072435:web:4dc10ef780bea7a5"
 };

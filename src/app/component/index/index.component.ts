@@ -18,6 +18,7 @@ export class IndexComponent implements OnInit {
   total = 0;
   need = 60000;
   inTheArm: any = 0;
+  debt: any = 0;
 
   constructor(private products: ProductsService,
               public router: Router,
@@ -43,10 +44,18 @@ export class IndexComponent implements OnInit {
 
     this.productList.subscribe(res => {
       const resp = res;
-      for (let item of resp) {
+      this.arm(resp);
+    });
+  }
+
+  arm(resp) {
+    for (let item of resp) {
+      if (+item.price < 0) {
+        this.debt += +item.price;
+      } else {
         this.inTheArm += +item.price;
       }
-    });
+    }
   }
 
   logout() {

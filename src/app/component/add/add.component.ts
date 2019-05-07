@@ -5,7 +5,6 @@ import {Product} from '../../model/note/note.model';
 import {Router} from '@angular/router';
 import {ConstModel} from '../../model/const/const.model';
 import {ConstValService} from '../../services/const-val.service';
-import {AddConstUsersComponent} from '../add-const-users/add-const-users.component';
 
 @Component({
   selector: 'app-add',
@@ -25,7 +24,7 @@ export class AddComponent implements OnInit {
     uid: localStorage.getItem('uid')
   };
 
-  constructor(private products: ProductsService, private  router: Router, public constUpdate: AddConstUsersComponent) {
+  constructor(private products: ProductsService, private  router: Router) {
 
   }
 

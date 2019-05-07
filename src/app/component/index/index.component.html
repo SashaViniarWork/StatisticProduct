@@ -27,17 +27,16 @@
 
     </mat-menu>
   </mat-toolbar-row>
-  <mat-toolbar-row *ngFor="let constvals of ValConst | async" detail-push>
-    <span>Total - {{constvals.total}}</span>
+  <mat-toolbar-row>
+    <span>Total - {{inTheArm}}</span>
     <span class="example-spacer"></span>
-    <span>Need - {{constvals.need}}</span>
 
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-toolbar color="accent" *ngFor="let product of productList | async" detail-push>
   <mat-toolbar-row>
-    <span>{{product.name}}</span>
+    <span>{{product.name}} {{product.price}}</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" (click)="navEdit(product.key, product)">edit</mat-icon>
   </mat-toolbar-row>

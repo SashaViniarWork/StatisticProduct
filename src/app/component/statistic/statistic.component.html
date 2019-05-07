@@ -1,43 +1,43 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <mat-icon class="example-icon" [routerLink]="['/home']">reply</mat-icon>
-    <span class="example-spacer"></span>
-    <span style='margin-left: 25px;'>Statistic</span>
-  </mat-toolbar-row>
-</mat-toolbar>
-<div class="example-container">
+<!--<mat-toolbar color="primary">-->
+  <!--<mat-toolbar-row>-->
+    <!--<mat-icon class="example-icon" [routerLink]="['/home']">reply</mat-icon>-->
+    <!--<span class="example-spacer"></span>-->
+    <!--<span style='margin-left: 25px;'>Statistic</span>-->
+  <!--</mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+<!--<div class="example-container">-->
 
 
-  <!--<mat-toolbar color="accent" *ngFor="let product of productList | async" detail-push>-->
-    <!--<mat-toolbar-row>-->
-      <!--<span>{{product.group}}</span>-->
-      <!--<span class="example-spacer"></span>-->
-      <!--<mat-icon class="example-icon" (click)="navEdit(product.key, product)">edit</mat-icon>-->
-    <!--</mat-toolbar-row>-->
-  <!--</mat-toolbar>-->
-  <div class="row">
-    <div class="col-md-6">
-      <div style="display: block;">
-        <canvas baseChart width="375" height="600"
-                [datasets]="lineChartData"
-                [labels]="lineChartLabels"
-                [options]="lineChartOptions"
-                [colors]="lineChartColors"
-                [legend]="lineChartLegend"
-                [chartType]="lineChartType"></canvas>
-      </div>
-    </div>
-    <!--<div class="col-md-6" style="margin-bottom: 10px">-->
-      <!--<table class="table table-responsive table-condensed">-->
-        <!--<tr>-->
-          <!--<th *ngFor="let label of lineChartLabels">{{label}}</th>-->
-        <!--</tr>-->
-        <!--<tr *ngFor="let d of lineChartData">-->
-          <!--<td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>-->
-        <!--</tr>-->
-      <!--</table>-->
-      <!--<button (click)="randomize()">CLICK</button>-->
+  <!--&lt;!&ndash;<mat-toolbar color="accent" *ngFor="let product of productList | async" detail-push>&ndash;&gt;-->
+    <!--&lt;!&ndash;<mat-toolbar-row>&ndash;&gt;-->
+      <!--&lt;!&ndash;<span>{{product.group}}</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;<span class="example-spacer"></span>&ndash;&gt;-->
+      <!--&lt;!&ndash;<mat-icon class="example-icon" (click)="navEdit(product.key, product)">edit</mat-icon>&ndash;&gt;-->
+    <!--&lt;!&ndash;</mat-toolbar-row>&ndash;&gt;-->
+  <!--&lt;!&ndash;</mat-toolbar>&ndash;&gt;-->
+  <!--<div class="row">-->
+    <!--<div class="col-md-6">-->
+      <!--<div style="display: block;">-->
+        <!--<canvas baseChart width="375" height="600"-->
+                <!--[datasets]="lineChartData"-->
+                <!--[labels]="lineChartLabels"-->
+                <!--[options]="lineChartOptions"-->
+                <!--[colors]="lineChartColors"-->
+                <!--[legend]="lineChartLegend"-->
+                <!--[chartType]="lineChartType"></canvas>-->
+      <!--</div>-->
     <!--</div>-->
-  </div>
+    <!--&lt;!&ndash;<div class="col-md-6" style="margin-bottom: 10px">&ndash;&gt;-->
+      <!--&lt;!&ndash;<table class="table table-responsive table-condensed">&ndash;&gt;-->
+        <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+          <!--&lt;!&ndash;<th *ngFor="let label of lineChartLabels">{{label}}</th>&ndash;&gt;-->
+        <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+        <!--&lt;!&ndash;<tr *ngFor="let d of lineChartData">&ndash;&gt;-->
+          <!--&lt;!&ndash;<td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>&ndash;&gt;-->
+        <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+      <!--&lt;!&ndash;</table>&ndash;&gt;-->
+      <!--&lt;!&ndash;<button (click)="randomize()">CLICK</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--</div>-->
 
-</div>
+<!--</div>-->

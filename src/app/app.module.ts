@@ -18,10 +18,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AuthService} from './services/auth.service';
 import {LoginComponent} from './component/auth/login/login.component';
 import {RegistrationComponent} from './component/auth/registration/registration.component';
-import {AddConstUsersComponent} from './component/add-const-users/add-const-users.component';
 import {ConstValService} from './services/const-val.service';
 import {ChangeTotalComponent} from './component/change-total/change-total.component';
-import { ChartsModule } from 'ng2-charts';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -41,12 +39,10 @@ import { StatisticComponent } from './component/statistic/statistic.component';
     EditComponent,
     LoginComponent,
     RegistrationComponent,
-    AddConstUsersComponent,
     ChangeTotalComponent,
     StatisticComponent
   ],
   imports: [
-    ChartsModule,
     BrowserModule,
     NoopAnimationsModule,
     FormsModule,

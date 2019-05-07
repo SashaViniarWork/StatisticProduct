@@ -17,6 +17,7 @@ export class IndexComponent implements OnInit {
   ValConst: Observable<ConstModel[]>;
   total = 0;
   need = 60000;
+  inTheArm: any = 0;
 
   constructor(private products: ProductsService,
               public router: Router,
@@ -39,6 +40,13 @@ export class IndexComponent implements OnInit {
             key: c.payload.key, ...c.payload.val()
           }));
         });
+
+    this.productList.subscribe(res => {
+      const resp = res;
+      for (let item of resp) {
+        this.inTheArm += +item.price;
+      }
+    });
   }
 
   logout() {
